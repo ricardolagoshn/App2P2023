@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App2P2023.MainPage">
+
+    <StackLayout BackgroundColor="BurlyWood">
+        
+        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+            <Label Text="Programacion Movil II!" HorizontalTextAlignment="Center" TextColor="White" FontSize="24"/>
+        </Frame>
+
+        <Entry x:Name="nombres" Placeholder="ingrese sus nombres" Margin="10,5,10,5"/>
+
+        <Entry x:Name="apellidos" Placeholder="ingrese sus apellidos" Margin="10,5,10,5"/>
+
+        <Button  Text="Guardar" Clicked="btn_guardar_Clicked" x:Name="btn_guardar" BackgroundColor="Aquamarine" Margin="10,5,10,5" /> 
+        
+    </StackLayout>
+
+</ContentPage>

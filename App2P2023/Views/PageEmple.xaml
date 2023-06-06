@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App2P2023.Views.PageEmple">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Entry">
+                <Setter Property="PlaceholderColor" Value="Gray" />
+                <Setter Property="MaxLength" Value="100" />
+            </Style>
+
+            <Style TargetType="DatePicker">
+                <Setter Property="BackgroundColor" Value="LightGray" />
+            </Style>
+
+            <Style TargetType="Button">
+                <Setter Property="BackgroundColor" Value="SteelBlue" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="Margin" Value="0,20,0,0" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+
+    <ContentPage.Content>
+        <StackLayout>
+
+            <Image x:Name="foto" WidthRequest="100" HeightRequest="200" />
+
+            <Button x:Name="btnfoto" Text="Capturar Imagen" Clicked="btnfoto_Clicked" />
+
+            <Entry x:Name="nombres" Placeholder="Nombres" MaxLength="100"  />
+
+            <Entry x:Name="apellidos" Placeholder="Apellidos" MaxLength="100"  />
+
+            <DatePicker x:Name="fecha"/>
+
+            <Entry x:Name="telefono" Placeholder="Telefono" MaxLength="100" Keyboard="Numeric" />
+
+            <Button x:Name="btnguardar" Text="Guardar" Clicked="btnguardar_Clicked" />
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
