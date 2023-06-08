@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,10 +16,51 @@ namespace App2P2023.Views
     {
 
         Plugin.Media.Abstractions.MediaFile photo = null;
+
+
+
         public PageEmple()
         {
             InitializeComponent();
         }
+
+        public String Getimage64()
+        {
+            if (photo != null)
+            {
+                using (MemoryStream memory = new MemoryStream())
+                {
+                    Stream stream = photo.GetStream();
+                    stream.CopyTo(memory);
+                    byte[]  fotobyte = memory.ToArray();
+
+                    String Base64 = Convert.ToBase64String(fotobyte);
+
+                    return Base64;
+                }
+            }
+
+            return null;
+        }
+
+        public byte[] GetimageBytes()
+        {
+            if (photo != null)
+            {
+                using (MemoryStream memory = new MemoryStream())
+                {
+                    Stream stream = photo.GetStream();
+                    stream.CopyTo(memory);
+                    byte[] fotobyte = memory.ToArray();
+                    
+                    return fotobyte;
+                }
+
+            }
+
+            return null;
+        }
+
 
         private async void btnguardar_Clicked(object sender, EventArgs e)
         {
@@ -27,7 +69,8 @@ namespace App2P2023.Views
                 Nombres = nombres.Text,
                 Apellidos = apellidos.Text,
                 Fechanac =  fecha.Date,
-                Telefono = telefono.Text
+                Telefono = telefono.Text,
+                foto = GetimageBytes()
             };
 
             if (await App.Instancia.AddEmple(emple) > 0)
