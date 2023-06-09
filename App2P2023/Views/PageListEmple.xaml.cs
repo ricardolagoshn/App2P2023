@@ -37,5 +37,15 @@ namespace App2P2023.Views
         {
 
         }
+
+        private async void ToolbarItem_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Views.PageGridEmple());
+        }
+
+        private async void ToolbarItem_Clicked_1(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Views.PageMap());
+        }
     }
 }

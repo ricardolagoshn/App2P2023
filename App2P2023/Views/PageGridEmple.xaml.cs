@@ -16,5 +16,12 @@ namespace App2P2023.Views
         {
             InitializeComponent();
         }
+
+
+        protected async override void OnAppearing()
+        {
+            base.OnAppearing();
+            listaemple.ItemsSource = await App.Instancia.GetAll();
+        }
     }
 }
